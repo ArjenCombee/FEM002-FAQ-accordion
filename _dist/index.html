@@ -11,37 +11,117 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
-
     <title>Frontend Mentor | FAQ Accordion Card</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
-    How many team members can I invite? You can invite up to 2 additional users
-    on the Free plan. There is no limit on team members for the Premium plan.
-    What is the maximum file upload size? No more than 2GB. All files in your
-    account must fit your allotted storage space. How do I reset my password?
-    Click “Forgot password” from the login page or “Change password” from your
-    profile page. A reset link will be emailed to you. Can I cancel my
-    subscription? Yes! Send us a message and we’ll process your request no
-    questions asked. Do you provide additional support? Chat and email support
-    is available 24/7. Phone lines are open during normal business hours.
+    <article class="accordion">
+      <sectiion class="accordion__image">
+        <picture>
+          <source
+            media="(min-width: 800px)"
+            srcset="images/illustration-woman-online-desktop.svg"
+          />
+          <img
+            src="images/illustration-woman-online-mobile.svg"
+            alt="Just a nice image"
+          />
+        </picture>
+      </sectiion>
+      <div class="accordion__content">
+        <h1 class="accordion__title">FAQ</h1>
+        <section class="accordion__item">
+          <input
+            class="accordion__input"
+            type="checkbox"
+            name="faq"
+            id="faq1"
+          />
+          <label class="accordion__label" for="faq1"
+            >How many team members can I invite?</label
+          >
+          <p class="accordion__body">
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
+        </section>
+
+        <section class="accordion__item">
+          <input
+            class="accordion__input"
+            type="checkbox"
+            name="faq"
+            id="faq2"
+          />
+          <label class="accordion__label" for="faq2"
+            >What is the maximum file upload size?</label
+          >
+          <p class="accordion__body">
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
+        </section>
+
+        <section class="accordion__item">
+          <input
+            class="accordion__input"
+            type="checkbox"
+            name="faq"
+            id="faq3"
+          />
+          <label class="accordion__label" for="faq3"
+            >How do I reset my password?</label
+          >
+          <p class="accordion__body">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </p>
+        </section>
+
+        <section class="accordion__item">
+          <input
+            class="accordion__input"
+            type="checkbox"
+            name="faq"
+            id="faq4"
+          />
+          <label class="accordion__label" for="faq4"
+            >Can I cancel my subscription?
+          </label>
+          <p class="accordion__body">
+            Yes! Send us a message and we’ll process your request no questions
+            asked.
+          </p>
+        </section>
+
+        <section class="accordion__item">
+          <input
+            class="accordion__input"
+            type="checkbox"
+            name="faq"
+            id="faq5"
+          />
+          <label class="accordion__label" for="faq5">Do you provide additional support?</label>
+            
+          </label>
+          <p class="accordion__body">
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
+          </p>
+        </section>
+      </div>
+    </article>
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://arjencombee.nl">Arjen Combee</a>.
     </div>
   </body>
 </html>
