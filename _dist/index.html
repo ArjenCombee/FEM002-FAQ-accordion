@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- displays site properly based on user's device -->
 
     <link
@@ -21,8 +22,8 @@
   </head>
   <body>
     <article class="accordion">
-      <sectiion class="accordion__image">
-        <picture>
+      <div class="accordion__image">        
+        <picture class="accordion__image--main">
           <source
             media="(min-width: 800px)"
             srcset="images/illustration-woman-online-desktop.svg"
@@ -30,9 +31,19 @@
           <img
             src="images/illustration-woman-online-mobile.svg"
             alt="Just a nice image"
+          />            
+        </picture>
+        <picture class="accordion__image--background">
+          <source
+            media="(min-width: 800px)"
+            srcset="images/bg-pattern-desktop.svg"
+          />
+          <img
+            src="images/bg-pattern-mobile.svg"
+            alt="Just a nice image"
           />
         </picture>
-      </sectiion>
+      </div>
       <div class="accordion__content">
         <h1 class="accordion__title">FAQ</h1>
         <section class="accordion__item">

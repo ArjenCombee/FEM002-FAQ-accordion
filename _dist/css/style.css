@@ -13,14 +13,10 @@
   box-sizing: inherit;
 }
 html {
-  font-size: 14px;
+  font-size: 12px;
   box-sizing: border-box;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(
       to right bottom,
       var(--color-gradient-violet),
@@ -28,52 +24,77 @@ body {
     )
     no-repeat;
   font-family: "Kumbh Sans", sans-serif;
+  line-height: 1.5;
   color: var(--color-text-blue);
-  min-height: 100vh;
+  min-height: calc(100vh - 8rem);
+  margin-top: 10rem;
 }
-
+img {
+  display: block;
+  border: 0;
+}
 /* ACCORDION STYLES */
 .accordion {
+  position: relative;
   background-color: #fff;
   width: 90%;
+  margin: 0 auto;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  padding: 2rem;
+  padding: 0 2rem 1rem 2rem;
+}
+.accordion__image {
+  max-height: 10rem;
+}
+.accordion__content {
+  padding: 0 2rem 2rem;
+}
+.accordion__image--main,
+.accordion__image--background {
+  display: flex;
+  justify-content: center;
+  top: -110px;
+  left: -15px;
+  position: relative;
+}
+.accordion__image--background {
+  top: -210px;
+  left: -5px;
 }
 .accordion__title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-text-darkblue);
   text-align: center;
-  padding: 1rem 0;
 }
-.accordion__item {
-  border-bottom: 1px solid var(--color-text-blue);
+.accordion__item:not(:last-child) {
+  border-bottom: 1px solid hsla(240, 6%, 50%, 30%);
 }
 .accordion__input {
   display: none;
 }
 .accordion__label {
-  display: block;
   position: relative;
+  display: block;
   padding: 1.5rem 0;
 }
 .accordion__label::after {
   content: "";
   position: absolute;
   background: url("../images/icon-arrow-down.svg") no-repeat;
-  height: 6px;
-  width: 11px;
-  top: 50%;
+  height: 7px;
+  width: 10px;
   right: 0;
+  /* center svg */
+  top: 50%;
   transform: translateY(-50%);
-  transition: transform 250ms;
+  transition: transform 200ms;
 }
 .accordion__body {
   padding: 0 inherit;
   max-height: 0;
   overflow: hidden;
-  transition: all 100ms;
+  transition: 100ms;
 }
 .accordion__input:checked ~ .accordion__label {
   font-weight: 700;
@@ -87,6 +108,67 @@ body {
   margin-bottom: 1rem;
 }
 
+/* MEDIA QUERY */
+
+@media only screen and (min-width: 800px) {
+  .accordion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: 100px;
+    max-width: 77rem;
+    padding: 0;
+  }
+  .accordion__image {
+    max-height: 42rem;
+    overflow: hidden;
+  }
+  .accordion__image::after {
+    content: "";
+    position: absolute;
+    height: 184px;
+    width: 191px;
+    background: url("../images/illustration-box-desktop.svg") no-repeat;
+    top: 220px;
+    left: -110px;
+    background-size: contain;
+    z-index: 20;
+  }
+  picture.accordion__image--main,
+  picture.accordion__image--background {
+    position: relative;
+    display: block;
+  }
+  picture.accordion__image--main {
+    top: 80px;
+    left: -80px;
+    z-index: 10;
+  }
+  picture.accordion__image--background {
+    top: -600px;
+    left: -600px;
+    height: 90%;
+    z-index: 1;
+  }
+  .accordion__content {
+    padding: 6rem 6rem 6rem 0;
+  }
+  .accordion__title {
+    text-align: left;
+  }
+}
+
+/* On extra small screens hide image */
+@media only screen and (max-width: 350px) {
+  .accordion__image {
+    display: none;
+  }
+  .accordion {
+    padding: 2rem 1rem 0;
+  }
+  .accordion__label::after {
+    display: none;
+  }
+}
 /* FRONTENDMENTOR STYLES */
 .attribution {
   margin-top: 2rem;
